@@ -8,7 +8,8 @@ const errorHandler = (err, req, res, next) => {
                 title: "Validation Failed",
                 message: err.message,
                 stackTrace: err.stack
-            })
+            });
+            break;
 
         case constants.UNAUTHORIZED:
             res.json({
@@ -16,6 +17,7 @@ const errorHandler = (err, req, res, next) => {
                 message: err.message,
                 stack: err.stack
             });
+            break;
 
         case constants.FORBIDDEN:
             res.json({
@@ -23,6 +25,7 @@ const errorHandler = (err, req, res, next) => {
                 message: err.message,
                 stack: err.stack
             });
+            break;
 
         case constants.NOT_FOUND:
             res.json({
@@ -30,6 +33,7 @@ const errorHandler = (err, req, res, next) => {
                 message: err.message,
                 stack: err.stack
             });
+            break;
 
         case constants.SERVER_ERROR:
             res.json({
@@ -37,7 +41,7 @@ const errorHandler = (err, req, res, next) => {
                 message: err.message,
                 stack: err.stack
             });
-
+            break;
         default:
             console.log("All good !No Error")
     }
