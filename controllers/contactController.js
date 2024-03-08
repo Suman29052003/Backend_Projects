@@ -1,4 +1,4 @@
-const asyncHandler = require('express-async-handler ')
+const asyncHandler = require('express-async-handler')
 // @desc get all contacts
 // @route GET /api/contacts
 // @access Public
